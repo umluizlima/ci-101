@@ -1,11 +1,10 @@
 # Python CircleCI 2.0 configuration file
 version: 2
-general:
-  branches:
-    only:
-     - circle
 jobs:
   build:
+    branches:
+      only:
+       - circle
     docker:
       - image: circleci/python:3.7
 
