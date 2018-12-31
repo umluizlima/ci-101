@@ -2,6 +2,7 @@
 Unit tests for the calculator library
 """
 
+import pytest
 import calculator
 
 
@@ -18,3 +19,7 @@ class TestCalculator:
 
     def test_division(self):
         assert 2.5 == calculator.divide(5, 2)
+
+    def test_division_by_zero(self):
+        with pytest.raises(ZeroDivisionError) as e_info:
+            result = calculator.divide(2, 0)
