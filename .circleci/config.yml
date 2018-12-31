@@ -2,14 +2,12 @@
 version: 2
 jobs:
   build:
+    docker:
+      - image: circleci/python:3.7
+    working_directory: ~/repo
     branches:
       only:
        - circle
-    docker:
-      - image: circleci/python:3.7
-
-    working_directory: ~/repo
-
     steps:
       # Step 1: obtain repo from GitHub
       - checkout
